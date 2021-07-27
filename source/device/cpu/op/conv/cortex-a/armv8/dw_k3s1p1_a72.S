@@ -57,7 +57,11 @@
 
 .text
 .align 5
+#ifdef __APPLE__
+.global _dw_k3s1p1_a72
+#else
 .global KERNEL_NAME
+#endif
 #ifdef __linux__
 .hidden KERNEL_NAME
 .type KERNEL_NAME, %function
